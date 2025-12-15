@@ -15,7 +15,9 @@ add_orc_rt_unittest(CoreTests
   AllocActionTest.cpp
   BitmaskEnumTest.cpp
   CallableTraitsHelperTest.cpp
+  EndianTest.cpp
   ErrorTest.cpp
+  ErrorExceptionInteropTest.cpp
   ExecutorAddressTest.cpp
   IntervalMapTest.cpp
   IntervalSetTest.cpp
@@ -23,11 +25,14 @@ add_orc_rt_unittest(CoreTests
   MemoryFlagsTest.cpp
   RTTITest.cpp
   ScopeExitTest.cpp
+  SessionTest.cpp
+  SimpleNativeMemoryMapTest.cpp
   SimplePackedSerializationTest.cpp
   SPSAllocActionTest.cpp
   SPSMemoryFlagsTest.cpp
   SPSWrapperFunctionTest.cpp
   SPSWrapperFunctionBufferTest.cpp
+  ThreadPoolTaskDispatcherTest.cpp
   WrapperFunctionBufferTest.cpp
   bind-test.cpp
   bit-test.cpp
@@ -35,4 +40,5 @@ add_orc_rt_unittest(CoreTests
   span-test.cpp
   DISABLE_LLVM_LINK_LLVM_DYLIB
   )
+target_compile_options(CoreTests PRIVATE ${ORC_RT_COMPILE_FLAGS})
 target_link_libraries(CoreTests PRIVATE orc-rt-executor)
